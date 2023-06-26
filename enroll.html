@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <title>SINHS Webpage</title>
+</head>
+<style>
+  body {
+    background: linear-gradient(to bottom right, #0033cc, #0099ff);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .navbar {
+    overflow: hidden;
+  }
+  .navbar a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .dropdown {
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  hr 
+  {
+  border: 1px solid #f3f1f1;
+  margin-bottom: 5px;
+  color: white;
+  }
+
+  span{
+     font-size: 20px;
+     color: white;
+  }
+
+ h1{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-bottom:10px;
+ }
+ 
+ h3{
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-bottom:10px;
+}
+
+ form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgba(61, 0, 244, 0.942);
+    border-radius: 8px;
+}
+
+
+  @media (max-width: 600px; max-height: 2835px;) {
+    .form-container {
+      position: fixed;
+    }
+    }
+
+    
+    .form-slide-left {
+      transform: translateX(-100%);
+    }
+    
+    .form-slide-right {
+      transform: translateX(100%);
+    }
+ 
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+label {
+  width: 120px;
+}
+
+input {
+  width: 200px;
+  color: rgb(0, 0, 0);
+}
+.submit-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+
+</style>
+
+<script>
+       function scrollSlider(event) {
+      var formContainer = document.getElementById('formContainer');
+      var scrollAmount = event.deltaY || event.detail || event.wheelDelta;
+      formContainer.scrollLeft += scrollAmount;
+    }
+
+    var startX;
+    
+    function handleTouchStart(event) {
+      startX = event.touches[0].clientX;
+    }
+    
+    function handleTouchMove(event) {
+      var formContainer = document.getElementById('formContainer');
+      var touchX = event.touches[0].clientX;
+      var scrollAmount = startX - touchX;
+      formContainer.scrollLeft += scrollAmount;
+      startX = touchX;
+    }
+</script>
+
+<body>
+       <header class = "header" id = "home">
+				<div>
+			  <img src="./images/logoM.png" alt="" height="30" width="30">
+			  <span style="font-size:30px"> San Isidro National High School</span>
+			</div>
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="enroll.html">Enrollment</a>
+                <a href="#">History</a>
+                <div class="dropdown">
+                  <a href="#">Requirements</a>
+                  <div class="dropdown-content">
+                    <a href="#service1">Student Card</a>
+                    <a href="#service2">PSA Certificate</a>
+                    <a href="#service3">2X2 Picture</a>
+                  </div>
+                </div>
+                  <div class="dropdown">
+                  <a href="#">About</a>
+                  <div class="dropdown-content">
+                    <a href="#">Admin Login</a>
+                    <a href="#">The Deped Mission,Vision,Core Values</a>
+                  </div>
+                </div>
+  
+ <h1>Enrollment</h1>
+ <div id="formContainer" class="form-container" onwheel="scrollSlider(event)">
+ <form action="https://api.sheetmonkey.io/form/9LYBjzECqZAwQBm9PU6vqG" method="post">
+  <div class="form-group">
+    <label for="SY" class="input-label">School Year:(2023-2024)</label>
+    <input type="text" id="SY" name="SY" class="input-field" required>
+</div>
+<div class="form-group">
+    <label for="Grade_level">Grade Level:</label>
+    <select id="Grade_level" name="Grade_level" required>
+      <option value=""></option>
+        <option value="G7">G7</option>
+        <option value="G8">G8</option>
+        <option value="G9">G9</option>
+        <option value="G10">G10</option>
+        <option value="G11">G11</option>
+        <option value="G12">G12</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="With_LRN">1. With LRN?</label>
+    <select id="With_LRN" name="With_LRN" required>
+        <option value=""></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="Returnee">2. Returning(Balik-Aral)</label>
+    <select id="Returnee" name="Returnee" >
+        <option value=""></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+ </div>
+ <div class="form-group">
+    <label for="PSA">PSA Birth Certificate No.(if available upon registration)</label>
+    <input type="PSA" id="PSA" name="PSA">
+</div>
+<div class="form-group">
+    <label for="LRN">Learner Reference No.</label>
+    <input type="text" id="LRN" name="LRN" required>
+    </div>
+  
+    <div class="form-group">
+    <label for="Last_Name">Lastname</label>
+    <input  type="Last_Name" id="Last_Name" name="Last_Name" required>
+     </div>
+     <div class="form-group">
+    <label for="First_Name">Firstname</label>
+    <input  type="First_Name" id="First_Name" name="First_Name" required>
+   </div>
+   <div class="form-group">
+    <label for="Middle_Name">Middlename(if not available (N/A))</label>
+    <input  type="Middle_Name" id="Middle_Name" name="Middle_Name" required>
+    </div>
+    <div class="form-group">
+    <label for="Birthdate">Birthdate(mm/dd/year)</label>
+    <input  type="text" id="Birthdate" name="Birthdate" required>
+    </div>
+    <div class="form-group">
+    <label for="Sex">Sex:</label>
+    <select id="Sex" name="Sex" required>
+        <option value=""></option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label for="Age">Age</label>
+    <input  type="text" id="Age" name="Age" required>
+    </div>
+    <div class="form-group">
+    <label for="Place_of_Birth">Place of Birth (Municipality/City)</label>
+    <input  type="text" id="Place_of_Birth" name="Place_of_Birth" required>
+    </div>
+    <div class="form-group">
+    <label for="Mother_Tongue">Mother Tongue</label>
+    <input  type="text" id="Mother_Tongue" name="Mother_Tongue" required>
+     </div>
+     <div class="form-group">
+    <label for="IP">Belonging to any Indigenous Peoples (IP)Community/Indigenous Cultural Community<br>if Yes please specify if No type N/A:</label>
+        <input  type="text" id="Indigenous_Peoples" name="Indigenous_Peoples">
+      </div>
+      <div class="form-group">
+    <label for="4Ps_Benificiary">Is your family a 4Ps Benificiary?</label>
+        <select id="4Ps_Benificiary" name="4Ps_Benificiary" required>
+            <option value=""></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+     </div>
+     <div class="form-group">
+    <label for="4Ps">4Ps Benificiary<br>if Yes please specify if No type N/A:</label>
+        <input  type="text" id="4Ps" name="4Ps">
+   </div>
+   <div class="form-group">
+    <label for="disability">Is the child a Learner with Disability?</label>
+    <select id="disability" name="disability" required>
+        <option value=""></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+     <label for="Disability_Type">if Yes, specify the type of disability</label>
+    <select id="Disability_Type" name="Disability_Type">  
+        <option value=""></option>
+        <option value="blind">Blind</option>
+        <option value="lowvision">low vision</option>
+        <option value="hearingimpairment">Hearing Impairment</option>
+        <option value="autisim">Autism Spectrum Disorder</option>
+        <option value="speech">Speech/Language Disorder</option>
+        <option value="learningdis">Learning Disability</option>
+        <option value="emotionbehave">Emotional-Behavioral Disorder</option>
+        <option value="learningdis">Learning Disability</option>
+        <option value="celebralpalsy">Celebral Palsy</option>
+        <option value="intellectualdis">Intellectual disability</option>
+        <option value="orthopedic">Orthopedic/Physical Handicap</option>
+        <option value="specialhealth">Special Health Problem/Chronic Disease</option>
+        <option value="cancer">Cancer</option>
+      </select>
+     </div>
+
+      <h3>Current Address</h3>
+      <div class="form-group">
+      <label for="House_No.">House No.</label>
+      <input type="text" id="House_No." name="House_No." required>
+      </div>
+      <div class="form-group">
+      <label for="Sitio/Street_Name">Sitio/Street Name</label>
+      <input type="text" id="Sitio/Street_Name" name="Sitio/Street_Name" required>
+    </div>
+      <div class="form-group">
+      <label for="Barangay">Barangay</label>
+      <input type="text" id="Barangay" name="Barangay" required>
+    </div>
+      <div class="form-group">
+      <label for="Municipality/City">Municipality/City</label>
+      <input type="text" id="Municipality/City" name="Municipality/City" required>
+    </div>
+      <div class="form-group">
+      <label for="Province">Province</label>
+      <input type="text" id="Province" name="Province" required>
+    </div>
+      <div class="form-group">
+      <label for="Country">Country</label>
+      <input type="text" id="Country" name="Country" required>
+    </div>
+      <div class="form-group">
+      <label for="Zip_Code">Zip Code</label>
+      <input type="text" id="Zip_Code" name="Zip_Code" required>
+    </div>
+
+      <h3>PARENT'S/GUARDIAN'S INFORMATION</h3>
+      <div class="form-group">
+      <label for="Father_Lastname">Father Lastname</label>
+      <input  type="text" id="Father_Lastname" name="Father_Lastname" required></div>
+      <div class="form-group">
+      <label for="Father_Firstname">Father Firstname</label>
+      <input  type="text" id="Father_Firstname" name="Father_Firstname" required></div>
+      <div class="form-group">
+      <label for="Father_MiddleName">Father Middlename(if not available (N/A))</label>
+      <input  type="text" id="Father_MiddleName" name="Father_MiddleName" required></div>
+      <div class="form-group">
+      <label for="Father_Contact">Contact Number</label>
+      <input  type="text" id="Father_Contact" name="Father_Contact" required></div>
+      <div class="form-group">
+      <label for="Mother_Lastname">Mother Lastname</label>
+      <input  type="text" id="Mother_Lastname" name="Mother_Lastname" required></div>
+      <div class="form-group">
+      <label for="Mother_Firstname">Mother Firstname</label>
+      <input  type="text" id="Mother_Firstname" name="Mother_Firstname" required></div>
+      <div class="form-group">
+      <label for="Mother_MiddleName">Mother Middlename(if not available (N/A))</label>
+      <input  type="text" id="Mother_MiddleName" name="Mother_MiddleName" required></div>
+      <div class="form-group">
+      <label for="Mother_Contact">Contact Number</label>
+      <input  type="text" id="Mother_Contact" name="Mother_Contact" required></div>
+      <div class="form-group">
+      <label for="Guardian_Lastname">Guardian Lastname</label>
+      <input  type="text" id="Guardian_Lastname" name="Guardian_Lastname" required></div>
+      <div class="form-group">
+      <label for="Guardian_Firstname">Guardian Firstname</label>
+      <input  type="text" id="Guardian_Firstname" name="Guardian_Firstname" required></div>
+      <div class="form-group">
+      <label for="Guardian_MiddleName">Guardian Middlename(if not available (N/A))</label>
+      <input  type="text" id="Guardian_MiddleName" name="Guardian_MiddleName" required></div>
+      <div class="form-group">
+      <label for="Guardian_Contact">Contact Number</label>
+      <input  type="text" id="Guardian_Contact" name="Guardian_Contact" required></div>
+
+      
+      <h3>For Returning Learner(Balik-Aral) and Those Who will Transfer/Move In</h3>
+      <div class="form-group">
+      <label for="Last Grade Level Completed">Last Grade Level Completed</label>
+      <input type="text" id="Last Grade Level Completed" name="Last Grade Level Completed" ></div>
+      <div class="form-group">
+      <label for="Last School Attended">Last School Attended</label>
+      <input type="text" id="Last School Attended" name="Last School Attended" ></div>
+      <div class="form-group">
+      <label for="Last School Year Completed">Last School Year Completed</label>
+      <input type="text" id="Last School Year Completed" name="Last School Year Completed" ></div>
+      <div class="form-group">
+      <label for="School ID">School ID</label>
+      <input type="text" id="School ID" name="School ID"></div>
+
+      <h3>For Learners in Senior High School</h3>
+      <div class="form-group">
+      <label for="Semester">Semester</label>
+      <select id="Semester" name="Semester" >
+          <option value=""></option>
+          <option value="1st">1st</option>
+          <option value="2nd">2nd</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="Track">Track</label>
+      <input type="text" id="Track" name="Track">
+    </div>
+    <div class="form-group">
+      <label for="Strand">Strand</label>
+      <input type="text" id="Strand" name="Strand">
+    </div>
+      <h3>If the school will implement other distance learning modalities aside from face-to-face instruction, what would prefer for your child?</h3>
+      <div class="form-group">
+      <label for="Choose all that apply">Choose all that apply</label>
+      <select id="Choose all that apply" name="Choose all that apply" required>
+          <option value=""></option>
+          <option value="Modular(Print)">Modular(Print)</option>
+          <option value="Modular(Digital)">Modular(Digital)</option>
+          <option value="Online">Online</option>
+          <option value="Educational Television">Educational Television</option>
+          <option value="Radio-Based Instruction">Radio-Based Instruction</option>
+          <option value="Homeschooling">Homeschooling</option>
+          <option value="Blended">Blended</option>
+        </select>
+      </div>
+      <input type="image" src="./images/submitbtn.png"  alt="Submit" class="submit-button">
+    </div>
+</form>
+</body>
+</html>
